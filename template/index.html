@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>User Authentication</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        /* Navbar */
+        nav {
+            width: 100%;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .signin {
+            color: white;
+            border: 1px solid white;
+        }
+
+        .signin:hover {
+            background: white;
+            color: #667eea;
+        }
+
+        .signup {
+            background: white;
+            color: #667eea;
+        }
+
+        .signup:hover {
+            background: #f1f1f1;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: calc(100vh - 75px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 19px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #f0f0f0;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .hero-btn {
+            padding: 13px 30px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .primary {
+            background: white;
+            color: #667eea;
+        }
+
+        .secondary {
+            border: 2px solid white;
+            color: white;
+        }
+
+        .primary:hover {
+            background: #eeeeee;
+        }
+
+        .secondary:hover {
+            background: white;
+            color: #667eea;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 15px 20px;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .btn {
+                padding: 8px 12px;
+                font-size: 13px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-btn {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        {% if log %}
+        <p style="color:white;text-align: center;">{{log}}</p>
+        {% endif %}
+        <div  class="logo">
+            AuthSystem
+        </div>
+
+        <div class="nav-buttons">
+            <a href="signin" class="btn signin">Sign In</a>
+            <a href="signup" class="btn signup">Sign Up</a>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>Welcome to AuthSystem</h1>
+
+            <p>
+                Create your account, sign in securely and manage
+                your profile with our simple authentication system.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#" class="hero-btn primary">
+                    Get Started
+                </a>
+
+                <a href="signin" class="hero-btn secondary">
+                    Sign In
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+</html>
