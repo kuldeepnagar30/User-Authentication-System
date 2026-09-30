@@ -29,7 +29,7 @@ def signup(request):
             contact=contact
             )
             user.save()
-            messages.success(request, 'Account created successfully.')
+            
             return render(request, 'signin.html',{'success':'Account created successfully.'})
     else:
         return render (request,'signup.html')
